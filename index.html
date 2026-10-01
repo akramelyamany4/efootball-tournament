@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1210">
+  <meta name="description" content="EFOOTBALL CUP : le tournoi eFootball à élimination directe.">
+  <title>EFOOTBALL CUP | Tournoi de football</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#accueil" aria-label="EFOOTBALL CUP, accueil">
+      <span class="brand-mark" aria-hidden="true">E</span>
+      <span class="brand-name">EFOOTBALL <b>CUP</b></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+      <span></span><span></span>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <a class="nav-link active" href="#accueil">Accueil</a>
+      <a class="nav-link" href="#bracket">Le bracket</a>
+      <a class="nav-link" href="#matchs">Matchs</a>
+      <a class="nav-link" href="#joueurs">Joueurs</a>
+      <a class="nav-link" href="/admin">Admin</a>
+    </nav>
+    <a class="header-cta" href="#bracket">Voir le bracket <span aria-hidden="true">↗</span></a>
+  </header>
+  <div class="site-error" id="site-error" role="alert" hidden></div>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-grid"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-mark"></span> AFFICHES PUBLIÉES</p>
+        <h1><span id="tournament-name">EFOOTBALL CUP</span><i>.</i></h1>
+        <p class="hero-subtitle">Le tournoi eFootball.<br>Un duel à la fois.</p>
+        <div class="hero-bottom">
+          <a class="button button-primary" href="#bracket">Explorer le bracket <span aria-hidden="true">↘</span></a>
+          <div class="tournament-stats" aria-label="Résumé du tournoi">
+            <div class="tournament-stat"><strong id="player-count">16</strong><span>JOUEURS</span></div>
+            <div class="tournament-stat"><strong id="match-count">8</strong><span>AFFICHES</span></div>
+            <div class="tournament-stat"><strong>04</strong><span>ÉTAPES</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-graphic">
+        <div class="pitch pitch-back"><div class="pitch-circle"></div><div class="pitch-box"></div></div>
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <article class="hero-opening-card" aria-label="Match d'ouverture">
+          <div class="opening-card-heading"><span>MATCH D'OUVERTURE</span><b>M1</b></div>
+          <div class="opening-card-contest">
+            <strong data-next-player="1">Ysn</strong>
+            <span>VS</span>
+            <strong data-next-player="2">Yusuf</strong>
+          </div>
+          <div class="opening-card-footer"><span>ROUND OF 16</span><a href="#matchs">VOIR LES 8 AFFICHES <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tournament-section" id="bracket">
+      <div class="section-wrap">
+        <div class="section-heading section-heading-light">
+          <div><p class="eyebrow">TABLEAU À ÉLIMINATION DIRECTE</p><h2>Le parcours<span class="heading-period">.</span></h2></div>
+          <span class="section-number">16 JOUEURS · 4 TOURS</span>
+        </div>
+        <div class="bracket-scroll">
+          <div class="bracket" id="bracket-board" aria-label="Tableau du tournoi"></div>
+        </div>
+        <div class="bracket-legend"><span><i class="legend-confirmed"></i> Affiche publiée</span><span><i class="legend-pending"></i> Place à déterminer</span></div>
+      </div>
+    </section>
+
+    <section class="matches-section section-wrap" id="matchs">
+      <div class="section-heading">
+          <div><p class="eyebrow">LES AFFICHES DU PREMIER TOUR</p><h2>Les matchs<span class="heading-period">.</span></h2></div>
+          <span class="section-number">08 MATCHS</span>
+      </div>
+      <div class="match-filters" role="group" aria-label="Filtrer les matchs">
+        <button class="filter-button selected" type="button" data-filter="tous" aria-pressed="true">Tous</button>
+        <button class="filter-button" type="button" data-filter="Huitièmes de finale" aria-pressed="false">Premier tour</button>
+      </div>
+      <div class="matches-list" id="matches-list"></div>
+    </section>
+
+    <section class="players-section" id="joueurs">
+      <div class="section-wrap">
+        <div class="section-heading section-heading-light">
+          <div><p class="eyebrow">LES 16 PARTICIPANTS</p><h2>Les joueurs<span class="heading-period">.</span></h2></div>
+          <span class="section-number">ROSTER OFFICIEL</span>
+        </div>
+        <div class="players-grid" id="players-grid" aria-label="Liste des 16 joueurs"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#accueil"><span class="brand-mark" aria-hidden="true">E</span><span class="brand-name">EFOOTBALL <b>CUP</b></span></a>
+    <p>LE FOOTBALL SE JOUE EN 1 VS 1.</p>
+    <a href="#accueil" class="back-top">RETOUR EN HAUT <span aria-hidden="true">↑</span></a>
+  </footer>
+</body>
+</html>
